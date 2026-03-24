@@ -1,5 +1,6 @@
 package com.time1.app.ui
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -30,6 +31,7 @@ import java.time.format.DateTimeFormatter
 @Composable
 fun SettingsScreen(
     settings: AppSettings,
+    modifier: Modifier = Modifier,
     onSave: (AppSettings) -> Unit
 ) {
     var salary by remember(settings) { mutableStateOf(settings.monthlySalary.toString()) }
@@ -57,7 +59,7 @@ fun SettingsScreen(
     val weekDays = SalaryCalculator.weekDaysInfo(currentSettings)
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(DarkBackground)
             .verticalScroll(rememberScrollState())
@@ -212,9 +214,7 @@ fun CycleDatePicker(
         onClick = { showDialog = true },
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.outlinedButtonColors(contentColor = TextPrimary),
-        border = ButtonDefaults.outlinedButtonBorder.copy(
-            brush = androidx.compose.ui.graphics.SolidColor(TextSecondary)
-        )
+        border = BorderStroke(1.dp, TextSecondary)
     ) {
         Text("Дата старта цикла: ${date.format(formatter)}", color = TextPrimary)
     }

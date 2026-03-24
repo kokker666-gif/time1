@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Time1" parent="android:Theme.Material.NoTitleBar" />
+    <style name="Theme.Time1" parent="android:Theme.Material.NoTitleBar">
+        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:navigationBarColor">@color/dark_background</item>
+    </style>
 </resources>

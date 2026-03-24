@@ -2,5 +2,5 @@
 <resources>
     <string name="app_name">Зарплата</string>
     <string name="widget_label">Зарплата — виджет</string>
-    <string name="widget_description">Показывает начисление зарплаты в реальном времени</string>
+    <string name="widget_description">Показывает начисление зарплаты. Обновляется раз в 30 минут (ограничение Android)</string>
 </resources>

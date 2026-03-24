@@ -164,7 +164,11 @@ object SalaryCalculator {
         }
     }
 
-    /** Abbreviated day names indexed by dayOfWeek.value % 7 (Sunday = 0). */
+    /** 
+     * Day names indexed by [java.time.DayOfWeek.value] % 7.
+     * DayOfWeek values: Mon=1..Sun=7. So 7 % 7 = 0 → "Вс" (Sunday),
+     * and 1..6 map directly to Пн..Сб.
+     */
     val DAY_NAMES_RU = listOf("Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб")
 
     data class DayInfo(

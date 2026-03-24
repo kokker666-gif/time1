@@ -37,6 +37,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     SettingsScreen(
                         settings = settings,
+                        modifier = Modifier.padding(innerPadding),
                         onSave = { newSettings ->
                             scope.launch {
                                 repository.saveSettings(newSettings)
