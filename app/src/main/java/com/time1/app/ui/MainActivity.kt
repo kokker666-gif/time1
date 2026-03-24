@@ -13,7 +13,7 @@ import androidx.glance.appwidget.updateAll
 import com.time1.app.data.SettingsRepository
 import com.time1.app.domain.model.AppSettings
 import com.time1.app.ui.theme.Time1Theme
-import com.time1.app.widget.SalaryWidgetReceiver
+import com.time1.app.widget.SalaryWidget
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
@@ -41,9 +41,7 @@ class MainActivity : ComponentActivity() {
                             scope.launch {
                                 repository.saveSettings(newSettings)
                                 settings = newSettings
-                                SalaryWidgetReceiver().apply {
-                                    updateAll(this@MainActivity)
-                                }
+                                SalaryWidget().updateAll(this@MainActivity)
                             }
                         }
                     )

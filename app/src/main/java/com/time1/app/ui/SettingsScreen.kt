@@ -347,8 +347,7 @@ fun MetricItem(label: String, value: String, color: Color) {
 
 @Composable
 fun DayChip(dayInfo: SalaryCalculator.DayInfo) {
-    val dayNames = listOf("Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб")
-    val dayName = dayNames[dayInfo.date.dayOfWeek.value % 7]
+    val dayName = SalaryCalculator.DAY_NAMES_RU[dayInfo.date.dayOfWeek.value % 7]
 
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Box(

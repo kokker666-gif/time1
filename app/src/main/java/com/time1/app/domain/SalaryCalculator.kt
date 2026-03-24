@@ -164,6 +164,9 @@ object SalaryCalculator {
         }
     }
 
+    /** Abbreviated day names indexed by dayOfWeek.value % 7 (Sunday = 0). */
+    val DAY_NAMES_RU = listOf("Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб")
+
     data class DayInfo(
         val date: LocalDate,
         val isWorkDay: Boolean,

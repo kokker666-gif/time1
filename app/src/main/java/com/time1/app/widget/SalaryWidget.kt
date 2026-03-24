@@ -126,9 +126,8 @@ private fun WidgetContent(settings: AppSettings, context: Context) {
                 modifier = GlanceModifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                val dayNames = listOf("Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб")
                 weekDays.forEach { day ->
-                    val dayName = dayNames[day.date.dayOfWeek.value % 7]
+                    val dayName = SalaryCalculator.DAY_NAMES_RU[day.date.dayOfWeek.value % 7]
                     Column(
                         modifier = GlanceModifier.defaultWeight(),
                         horizontalAlignment = Alignment.CenterHorizontally
